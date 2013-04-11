@@ -164,24 +164,13 @@ var slider = {
         if( selectedLeft > (slider.windowWidth / 2) ){
             var calculated = selectedLeft - ((slider.windowWidth - 190) / 2);
 
-            if(slider.thumbsWrap.hasClass('b-thumbs--show')){
-                slider.thumbsWrap.animate({
-                    scrollLeft: calculated
-                }, 500);
-
-            }else{
-                slider.thumbsWrap.scrollLeft(calculated);
-            }
+            slider.thumbsWrap.animate({
+                scrollLeft: calculated
+            }, 500);
         }else {
-
-            if(slider.thumbsWrap.hasClass('b-thumbs--show')){
-                slider.thumbsWrap.animate({
-                    scrollLeft: 0
-                }, 500);
-
-            }else{
-                slider.thumbsWrap.scrollLeft(0);
-            }
+            slider.thumbsWrap.animate({
+                scrollLeft: 0
+            }, 500);
         }
     },
 
@@ -255,6 +244,5 @@ var slider = {
 
 $(window).load(function () {
     slider.init();
-    slider.thumbsWrap.addClass('b-thumbs--show');
-    $('.b-nav').addClass('b-nav--show b-nav--active');
+    $('.b-nav').addClass('b-nav__active');
 });
